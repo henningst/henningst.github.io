@@ -1,8 +1,5 @@
-<header id="masthead">
-  <div class="inner-wrap">
-    <a href="{{ site.url }}/" class="site-title">{{ site.title }}</a>
-    <nav role="navigation" class="menu top-menu">
-        {% include navigation.html %}
-    </nav>
-  </div><!-- /.inner-wrap -->
-</header><!-- /.masthead -->
+<!-- Header -->
+  <header id="header">
+    <a href="{{ site.github.url }}/" class="image avatar"><img src="{{ site.github.url }}/images/avatar.jpg" alt="" /></a>
+    <h1>{{ site.description | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
+  </header>

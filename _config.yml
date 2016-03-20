@@ -1,51 +1,22 @@
-# Site wide configuration
-
-title:
-description:
-logo: # 120x120 px default image used for Twitter summary card
-teaser: # 400x250 px default teaser image used in image archive grid
-locale: en
-url:
-
-# Jekyll configuration
-
+title: Strata by HTML5 UP
+description: >
+  **I am Strata**, a super simple
+  responsive site template freebie
+  crafted by [HTML5 UP](http://html5up.net).
+copyright: Untitled
 sass:
-  sass_dir: _sass
-  style: compressed
-permalink: /:categories/:title/
-kramdown:
-  toc_levels: 1..2
-highlighter: rouge
-gems:
-  - jekyll-sitemap
-  - jekyll-gist
-
-
-# Octopress configuration
-
-# Default extensions
-post_ext: md
-page_ext: md
-
-# Found in _templates/
-post_layout: article
-page_layout: article
-
-# Format titles with titlecase?
-titlecase: true
-
-
-# Site owner
-owner:
-  name:
-  email:
-  twitter:
-  google:
-    ad-client:
-    ad-slot:
-  bio:
-  avatar: bio-photo.jpg # 160x160 px image for author byline
-  disqus-shortname:
-
-
-exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
+  sass_dir: assets/sass
+url: http://localhost:4000
+disqus_shortname: stratajekylldemo
+facebook_username:
+twitter_username: "#"
+linkedin_username: "#"
+instagram_username:
+pinterest_username:
+flickr_username:
+github_username:  "#"
+feed_icon: rss
+email: "#"
+gems: [jekyll-paginate]
+paginate_path: "/page/:num/"
+paginate: 5
