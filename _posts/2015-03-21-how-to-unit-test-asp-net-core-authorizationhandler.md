@@ -128,8 +128,10 @@ You can find a complete sample at [https://github.com/henningst/ASPNETCore-Autho
 
 ### Resources
 [ASP.NET Documentation on Resource Based Authorization](https://docs.asp.net/en/latest/security/authorization/resourcebased.html)
+
 [Get started with ASP.NET Core Authorization](https://blogs.msdn.microsoft.com/webdev/2016/03/15/get-started-with-asp-net-core-authorization-part-1-of-2/)
-[A run around the new ASP.NET Data Protection & Authorization Stacks - Barray Dorrans](https://vimeo.com/153102690)
+
+[A run around the new ASP.NET Data Protection & Authorization Stacks - Barry Dorrans](https://vimeo.com/153102690)
 
 
 ---
