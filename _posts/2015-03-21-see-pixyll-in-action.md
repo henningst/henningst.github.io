@@ -1,9 +1,9 @@
 ---
 layout:     post
 title:      Pixyll in Action
-date:       2014-06-10 12:31:19
+date:       2015-03-21 21:44:00
 summary:    See what the different elements looks like. Your markdown has never looked better. I promise.
-categories: jekyll pixyll
+categories: aspnet-core
 ---
 
 There is a significant amount of subtle, yet precisely calibrated, styling to ensure
@@ -101,6 +101,9 @@ Also the result of [BASSCSS](http://www.basscss.com/), you can <span class="bg-d
 of a <span class="red">post</span> <span class="mid-gray">with</span> <span class="green">CSS</span> <span class="orange">classes</span>.
 
 I don't recommend using blue, though. It looks like a <span class="blue">link</span>.
+
+
+
 
 ### Footnotes!
 
