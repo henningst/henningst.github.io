@@ -1,29 +1,28 @@
 ---
 layout: default
-image: /images/fulls/01.jpg
 ---
-<!-- This loops through the paginated posts -->
-{% for post in paginator.posts %}
-  <section>
-    <h2><a href="{{ post.url | prepend: site.github.url }}">{{ post.title }}</a></h2>
-    <p>
-      <span><i class="fa fa-calendar"></i> {{ post.date | date: "%d %B %Y" }}{% if post.categories %} on <i class="fa fa-tags"></i> {{ post.categories | join: ', ' }}{% endif %}</span>
-    </p>
-    <div>
-      {{ post.excerpt }}
-    </div>
-  </section>
-{% endfor %}
+{% assign posts_count = (paginator.posts | size) %}
 
-{% if paginator.total_pages > 1 %}
-<!-- Pagination links -->
-<section>
-  {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}">Previous</a>
+<div class="home">
+  {% if posts_count > 0 %}
+    <div class="posts">
+      {% for post in paginator.posts %}
+        <div class="post py3">
+          <p class="post-meta">{{ post.date | date: site.date_format }}</p>
+          <a href="{{ post.url | prepend: site.baseurl }}" class="post-link"><h3 class="h1 post-title">{{ post.title }}</h3></a>
+          <p class="post-summary">
+            {% if post.summary %}
+              {{ post.summary }}
+            {% else %}
+              {{ post.excerpt }}
+            {% endif %}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% include pagination.html %}
+  {% else %}
+    <h1 class='center'>{{ site.text.index.coming_soon }}</h3>
   {% endif %}
-  <span>Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}">Next</a>
-  {% endif %}
-</section>
-{% endif %}
+</div>
