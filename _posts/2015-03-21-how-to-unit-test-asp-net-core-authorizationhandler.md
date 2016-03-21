@@ -38,6 +38,8 @@ public class HomeController : Controller
 }
 {% endhighlight %}
 
+
+
 To make the call to AuthorizeAsync(..) work, you have to implement an AuthorizationHandler matching your resource (in our case, Document) and operation requirement.
 
 Here is what the AuthorizationHandler looks like:
@@ -63,6 +65,8 @@ namespace AuthorizationDemo.Authz
     }
 }
 {% endhighlight %}
+
+
 
 We inherit from AuthorizationHandler<TRequiremement, TResource> which in turn implements the IAuthorizationHandler interface.
 
@@ -119,13 +123,13 @@ public void Handle_WhenCalledWithIllegalUser_ShouldNotSucceed()
 {% endhighlight %}
 
 
-You can find a complete sample at (https://github.com/henningst/ASPNETCore-AuthorizationDemo)
+You can find a complete sample at [https://github.com/henningst/ASPNETCore-AuthorizationDemo](https://github.com/henningst/ASPNETCore-AuthorizationDemo)
 
 
 ### Resources
-(https://docs.asp.net/en/latest/security/authorization/resourcebased.html)
-(https://blogs.msdn.microsoft.com/webdev/2016/03/15/get-started-with-asp-net-core-authorization-part-1-of-2/)
-(https://vimeo.com/153102690)
+[ASP.NET Documentation on Resource Based Authorization](https://docs.asp.net/en/latest/security/authorization/resourcebased.html)
+[Get started with ASP.NET Core Authorization](https://blogs.msdn.microsoft.com/webdev/2016/03/15/get-started-with-asp-net-core-authorization-part-1-of-2/)
+[A run around the new ASP.NET Data Protection & Authorization Stacks - Barray Dorrans](https://vimeo.com/153102690)
 
 
 ---
