@@ -5,7 +5,6 @@ title: About this site
 
 <div class="post">
 	<h1 class="pageTitle">About this site</h1>
-	<img src="{{ '/assets/img/touring.jpg' | prepend: site.baseurl }}" alt="">
 	<p class="intro">
 	Site built using Jekyll with the <a href="https://github.com/brianmaierjr/long-haul">Long Haul</a> theme.
 	</p>
