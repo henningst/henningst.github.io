@@ -3,8 +3,8 @@ description: Long Form Jekyll theme built with SASS / COMPASS / SUSY
 
 url: http://blog.stoverud.no
 baseurl: ""
-paginate_path: "blog/page:num/"
-permalink: blog/:title/
+paginate_path: "/page:num/"
+permalink: /:title/
 
 markdown: kramdown
 highlighter: rouge
