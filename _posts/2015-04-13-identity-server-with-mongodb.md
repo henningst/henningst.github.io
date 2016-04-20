@@ -10,7 +10,7 @@ This blog posts shows how you can use MongoDB as persistence for your users and 
 I've used MVC Sample from the [IdentityServer4.Sample repository](https://github.com/IdentityServer/IdentityServer4.Samples/tree/master/Mvc) as a starting point
 and replaced the InMemory version of the client store and user store.
 
-The complete solution can also be found on GitHub at [https://github.com/henningst/IdentityServer4-MongoDB-Sample/]
+The complete solution can also be found on GitHub at <https://github.com/henningst/IdentityServer4-MongoDB-Sample/>
 
 I've decided to implement one common repository class that takes care of all the interaction with MongoDB and then use this repository from
 the various services needed by IdentityServer.
