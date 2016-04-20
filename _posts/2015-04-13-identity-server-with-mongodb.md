@@ -7,7 +7,7 @@ categories: aspnet-core
 ---
 
 This blog posts shows how you can use MongoDB as persistence for your users and clients in IdentityServer 4. 
-I've used MVC Sample from the [IdentityServer4.Sample repository](https://github.com/IdentityServer/IdentityServer4.Samples/tree/master/Mvc) as a starting point
+I've used the MVC Sample from the [IdentityServer4.Sample repository](https://github.com/IdentityServer/IdentityServer4.Samples/tree/master/Mvc) as a starting point 
 and replaced the InMemory version of the client store and user store.
 
 The complete solution can also be found on GitHub at <https://github.com/henningst/IdentityServer4-MongoDB-Sample/>
