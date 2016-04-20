@@ -19,7 +19,7 @@ The code snippet below shows how I've changed the configuration of services to r
 with a custom MongoDB implementation. I've commented out the lines where clients and users are added and instead added
 my own implementations.
 
-{% highlight json lineanchors %}
+{% highlight csharp lineanchors %}
 public void ConfigureServices(IServiceCollection services)
 {
     var cert = new X509Certificate2(Path.Combine(_environment.ApplicationBasePath, "idsrv4test.pfx"), "idsrv3test");
@@ -413,3 +413,7 @@ namespace IdSvrHost.UI.Login
     }
 }
 {% endhighlight %}
+
+You should now have a a working IdentityServer4 where the users and clients are retrieved from MongoDB.
+
+Complete source: <https://github.com/henningst/IdentityServer4-MongoDB-Sample/>
