@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Using MongoDB as store for IdentityServer 4
-date:       2015-03-21 21:44:00
+date:       2016-03-21 21:44:00
 summary:    Sample implementation on how to use MongoDB to implement stores for users and clients in IdentityServer 4.
 categories: aspnet-core
 ---
@@ -246,9 +246,8 @@ Now that we have the necessary parts of the repository in place, we can continue
 
 There are two interfaces you need to implement in order to have a working user store; IProfileService and IResourceOwnerPasswordValidator.
 
-In each implementation we get the repository injected via the constructor. This is handled by the built in [dependency injection](http://docs.asp.net/en/latest/fundamentals/dependency-injection.html) mechanism
-in ASP.NET Core](http://docs.asp.net/en/latest/fundamentals/dependency-injection.html). 
-re
+In each implementation we get the repository injected via the constructor. This is handled by the built in [dependency injection mechanism
+in ASP.NET Core](http://docs.asp.net/en/latest/fundamentals/dependency-injection.html).
 
 The MongoDbProfileService is basically just retrieving a user from MongoDB and mapping it to claims which are set on the context.
 
