@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Using MongoDB as store for IdentityServer 4
-date:       2016-03-21 21:44:00
+date:       2016-04-21 21:44:00
 summary:    Sample implementation on how to use MongoDB to implement stores for users and clients in IdentityServer 4.
 categories: aspnet-core
 ---
