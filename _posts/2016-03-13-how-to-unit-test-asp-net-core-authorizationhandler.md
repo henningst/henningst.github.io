@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      How to unit test your ASP.NET Core AuthorizationHandler
-date:       2016-03-21 21:44:00
+date:       2016-03-13 21:44:00
 summary:    With the new authorization story in ASP.NET Core, you get a lot more flexibility when it comes to handling authorization in your apps. Here I'll walk through how you can implement resource based authorization and how to unit test your AuthorizationHandler.
 categories: aspnet-core
 ---
