@@ -21,7 +21,7 @@ Azure Web App. Here is a walk through of how I got it up and running.
 Start by creating a new web app through the [Azure Portal](https://portal.azure.com). You could also do this from the 
 command line using the Azure CLI, but I´m going to use the Azure Portal in this walk through.
 
-![Screenshot of Azure Portal]({{ site.url }}/assets/posts/atlasboard/1.png)
+![Screenshot of Azure Portal]({{ site.url }}/assets/img/posts/atlasboard/1.png)
 
 Make sure you have [Node](https://nodejs.org/en/) installed.
 
@@ -100,7 +100,7 @@ could deploy from github, vsts etc. To enable git deployments to your Azure web 
 go to the Azure portal again, click "Deployment source" and choose "Local Git repository" as
 the deployment source as shown in the screenshot below.
 
-![Screenshot of Deployment source]({{ site.url }}/assets/posts/atlasboard/2.png)
+![Screenshot of Deployment source]({{ site.url }}/assets/img/posts/atlasboard/2.png)
 
 
 Then open "Deployment credentials" and set a username and password. This will be the credentials
@@ -115,7 +115,7 @@ Now add the git url of your web app as a remote in order to push to Azure.
 
 You find the Git URL for your web app in the Azure portal as shown in the screenshot below.
 
-![Screenshot of Azure settings with Git URL]({{ site.url }}/assets/posts/atlasboard/3.png)
+![Screenshot of Azure settings with Git URL]({{ site.url }}/assets/img/posts/atlasboard/3.png)
 
 Add and commit all files and push to Azure.
 ```git add .;git commit -m "Initial commit";git push azure master```
@@ -133,7 +133,7 @@ This can be done through the Kudu Console which you can find using the following
 https://[your-webapp-name].*scm*.azurewebsites.net/DebugConsole. There is also a link to the
 Kudu dashboard from the Azure Portal (Tools --> Kudu --> Go) as shown in the screenshot below. 
 
-![Screenshot of Azure settings with Git URL]({{ site.url }}/assets/posts/atlasboard/4.png)
+![Screenshot of Azure settings with Git URL]({{ site.url }}/assets/img/posts/atlasboard/4.png)
 
 
 Locate the following file and edit it.
@@ -158,7 +158,7 @@ After:
   
 If you access the web app url, you should now see the demo dashboard up and running!
 
-![Screenshot of a running Atlasboard]({{ site.url }}/assets/posts/atlasboard/5.png)
+![Screenshot of a running Atlasboard]({{ site.url }}/assets/img/posts/atlasboard/5.png)
 
 ## Thanks
 
