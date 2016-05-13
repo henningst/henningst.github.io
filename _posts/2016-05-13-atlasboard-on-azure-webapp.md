@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Running Atlasboard on an Azure Web App
-date:       2016-05-13 09:30:00
+date:       2016-05-13 00:30:00
 summary:    Walk-through of how you can get Atlasboard up and running in an Azure Web App.
 categories: atlasboard, azure, javascript
 ---
@@ -33,7 +33,7 @@ Then use the new atlasboard command you just installed to create a new dashboard
 
 This will create a new directory structure with your new dashboard. 
 
-{% highlight %}
+{% highlight bash %}
 
 -rw-r--r--  1 henning  staff  139 May 12 22:37 README.md
 drwxr-xr-x  4 henning  staff  136 May 12 22:37 assets
