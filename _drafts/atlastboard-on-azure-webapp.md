@@ -1,29 +1,38 @@
-Testing atlasboard on Azure webapps
+---
+layout:     post
+title:      Running Atlasboard on an Azure Web App
+date:       2016-05-13 01:30:00
+categories: atlasboard, azure, javascript
+---
 
-- Created a new repo on vsts
-- Installed atlasboard
-- Moved the site to the root directory of the repo
-- Changed the node pinned version (see deployment log)
-  - logfiles in iisnode dir
-- Enabled iisnode logging by changing the nodeiis.yml file
-- problems with node modules in repo
+If you are a software developer like me, you are probably excited about graphs and stats from 
+systems that are relevant for your workflow. If this data is available on a live updated 
+big screen on the wall, it´s even better. [Atlasboard](http://atlasboard.bitbucket.org) is
+one of the tools that can easily get you a nice looking status board.
+
+Atlasboard is an open source nodejs based application created by Atlasian. You can read more
+about it [here](http://atlasboard.bitbucket.org/).
+
+Since I´m a .net developer and have most of my apps on Azure, I wanted to host Atlasboard in an
+Azure Web App. Here is a walk through of how I got it up and running.
 
 
-Title: How to run AtlasBoard on an Azure Web App
+Start by creating a new web app through the [Azure Portal](https://portal.azure.com). You could also do this from the 
+command line using the Azure CLI, but I´m going to use the Azure Portal in this walk through.
 
-Start by creating a new web app through the Azure Portal. You could also do this from the command line using the Azure CLI.
+![Screenshot of Azure Portal]({{ site.url }}/assets/posts/atlasboard/1.png)
 
-Then head over to http://atlasboard.bitbucket.org/ and follow the steps to get started in 30 seconds.
+Make sure you have [Node](https://nodejs.org/en/) installed.
 
-Make sure you have Node installed. You can check this by typing ```node -v``` in the console.
-
-run npm install -g atlasboard. This will install atlasboard as a global package on your local machine.
+Run ```npm install -g atlasboard```. This will install atlasboard as a global package on your local machine.
 
 Then use the new atlasboard command you just installed to create a new dashboard by issuing the command
 
-atlasboard new mydashboard
+```atlasboard new mydashboard```
 
-this will create a new directory structure with your new dashboard. 
+This will create a new directory structure with your new dashboard. 
+
+{% highlight %}
 
 -rw-r--r--  1 henning  staff  139 May 12 22:37 README.md
 drwxr-xr-x  4 henning  staff  136 May 12 22:37 assets
@@ -33,15 +42,16 @@ drwxr-xr-x  6 henning  staff  204 May 12 22:37 config
 drwxr-xr-x  4 henning  staff  136 May 12 22:37 packages
 -rw-r--r--  1 henning  staff  580 May 12 22:37 start.js
 drwxr-xr-x  3 henning  staff  102 May 12 22:37 themes
+{% endhighlight %}
 
-Then we need to add the atlasboard dependency in package.json by adding
+Then we need to add the atlasboard dependency in package.json like this:
 
+
+{% highlight json %}
   "dependencies": {
     "atlasboard": "^1.1.3"
   }
-
-
-!!!! Should we do some steps here first?
+{% endhighlight %}
 
 
 cd into mydashboard and run npm install to install the required packages.
@@ -52,27 +62,50 @@ Before you can deploy to Azure, there are a couple of adjustments you need to do
 
 1. Change the port number variable from ATLASTBOARD_PORT to PORT as shown below.
 
+Before:
+{% highlight javascript %}
 atlasboard({port: process.env.ATLASBOARD_PORT || 3000, install: true}, function (err) { 
+{% endhighlight %}
+
+After:
+{% highlight javascript %}
 atlasboard({port: process.env.PORT || 3000, install: true}, function (err) {
+{% endhighlight %}
+
+
 
 2. Change the required npm version in package.json
 
+Before:
+{% highlight javascript %}
   "engines": {
     "npm": "~2.0.0",
     "node": ">=0.10"
   },
+{% endhighlight %}
 
+After:
+{% highlight javascript %}
   "engines": {
     "npm": ">2.0.0",
     "node": ">=0.10"
   },
+{% endhighlight %}
  
 
 
-We are now ready to deploy. I´ll choose to deploy directly from a local git repository but you could deploy from github, vsts etc. Select local git repository and click ok (see screenshot).
+We are now ready to deploy. I´ll choose to deploy directly from a local git repository but you 
+could deploy from github, vsts etc. To enable git deployments to your Azure web app,
+go to the Azure portal again, click "Deployment source" and choose "Local Git repository" as
+the deployment source as shown in the screenshot below.
 
-Then open deployment credentials and set a username and password.
+![Screenshot of Deployment source]({{ site.url }}/assets/posts/atlasboard/2.png)
 
+
+Then open "Deployment credentials" and set a username and password. This will be the credentials
+you use when adding Azure as a remote to your local git repository.
+
+The next thing you need to do is to initialize the mydashboard directory as a git repository.
 First initialize a local git repository in your mydashboard directory by typing git init.
 
 Initialized empty Git repository in /Users/henning/Projects/henningst-atlastest/mydashboard/.git/
