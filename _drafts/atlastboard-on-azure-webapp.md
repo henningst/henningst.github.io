@@ -105,8 +105,12 @@ the deployment source as shown in the screenshot below.
 Then open "Deployment credentials" and set a username and password. This will be the credentials
 you use when adding Azure as a remote to your local git repository.
 
-The next thing you need to do is to initialize the mydashboard directory as a git repository.
-First initialize a local git repository in your mydashboard directory by typing git init.
+The next thing you need to do is to initialize the mydashboard directory as a git repository by
+doing a ```git init```.
+
+
+--> fortsett her
+
 
 Initialized empty Git repository in /Users/henning/Projects/henningst-atlastest/mydashboard/.git/
 
