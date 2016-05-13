@@ -59,7 +59,7 @@ You should now be able to run ```atlasboard start 3333``` to start atlasboard. O
 
 Before you can deploy to Azure, there are a couple of adjustments you need to do.
 
-1. Change the port number variable from ATLASTBOARD_PORT to PORT as shown below.
+1: Change the port number variable from ATLASTBOARD_PORT to PORT as shown below.
 
 Before:
 {% highlight javascript %}
@@ -73,7 +73,7 @@ atlasboard({port: process.env.PORT || 3000, install: true}, function (err) {
 
 
 
-2. Change the required npm version in package.json
+2: Change the required npm version in package.json
 
 Before:
 {% highlight javascript %}
