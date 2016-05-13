@@ -14,7 +14,7 @@ one of the tools that can easily get you a nice looking status board.
 Atlasboard is an open source nodejs based application created by [http://www.atlassian.com](Atlassian). 
 
 Since I´m a .net developer and have most of my apps on Azure, I wanted to host Atlasboard in an
-Azure Web App. Here is a walk through of how I got it up and running.
+[Azure Web App](https://azure.microsoft.com/nb-no/services/app-service/web/). Here is a walk through of how I got it up and running.
 
 Start by creating a new web app through the [Azure Portal](https://portal.azure.com). You could also do this from the 
 command line using the Azure CLI, but I´m going to use the Azure Portal in this walk through.
