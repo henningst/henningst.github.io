@@ -164,7 +164,7 @@ Thanks [@garyliu](https://twitter.com/garyliu) to for helping me get this up and
 my [stackoverflow question](http://stackoverflow.com/a/37109868/5795)
 
 
-## Trouble shooting
+## Troubleshooting
 If you still run into problems, it might be useful to add the following lines to the iisnode.yml file
 in wwwroot where your webapp is installed.
 
