@@ -2,6 +2,7 @@
 layout:     post
 title:      Running Atlasboard on an Azure Web App
 date:       2016-05-13 09:30:00
+summary:    Walk-through of how you can get Atlasboard up and running in an Azure Web App.
 categories: atlasboard, azure, javascript
 ---
 
