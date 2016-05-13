@@ -55,7 +55,7 @@ Then we need to add the atlasboard dependency in package.json like this:
 
 cd into mydashboard and run npm install to install the required packages.
 
-You should now be able to run ´´´atlasboard start 3333``` to start atlasboard. Open http://localhost:3333 in a browser to make sure it works.
+You should now be able to run ´´´atlasboard start 3333´´´ to start atlasboard. Open http://localhost:3333 in a browser to make sure it works.
 
 Before you can deploy to Azure, there are a couple of adjustments you need to do.
 
