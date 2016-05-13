@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Running Atlasboard on an Azure Web App
-date:       2016-05-13 01:30:00
+date:       2016-05-13 09:30:00
 categories: atlasboard, azure, javascript
 ---
 
@@ -106,53 +106,74 @@ Then open "Deployment credentials" and set a username and password. This will be
 you use when adding Azure as a remote to your local git repository.
 
 The next thing you need to do is to initialize the mydashboard directory as a git repository by
-doing a ```git init```.
+doing a ```git init```. Make sure you do this inside the root directory of the dashboard you have created.
 
+Now add the git url of your web app as a remote in order to push to Azure.
 
---> fortsett her
+```git remote add azure https://[username]@[your-webapp-name].scm.azurewebsites.net:443/[your-webapp-name].git```
 
+You find the Git URL for your web app in the Azure portal as shown in the screenshot below.
 
-Initialized empty Git repository in /Users/henning/Projects/henningst-atlastest/mydashboard/.git/
+![Screenshot of Azure settings with Git URL]({{ site.url }}/assets/posts/atlasboard/3.png)
 
-Now add the git url of your web app as a remote in order to push to azure.
+Add and commit all files and push to Azure.
+```git add .;git commit -m "Initial commit";git push azure master```
 
-git remote add azure https://henningst-atlasboard@henningst-atlasboard.scm.azurewebsites.net:443/henningst-atlasboard.git
+You should now see all the files being pushed and you will also see some output from Kudu that takes care
+of installing your node app. If everything goes as expected, you should see ```remote: Deployment successful.```
+as one of the last lines of the output.
 
-Add and commit all files and push to azure.
-git add .;git commit -m "Initial commit";git push azure master
+## Tweak package-dependency-manager.js
+Your dashboard is now installed in Azure, but there is a small hack you need to do in order to
+get this working. In the Atlasboard dependency manager, you need to change the path to the npm command
+and modify the command that is issued when installing packages.
 
-You should see:
+This can be done through the Kudu Console which you can find using the following URL
+https://[your-webapp-name].*scm*.azurewebsites.net/DebugConsole. There is also a link to the
+Kudu dashboard from the Azure Portal (Tools --> Kudu --> Go) as shown in the screenshot below. 
 
-remote: Deployment successful.
+![Screenshot of Azure settings with Git URL]({{ site.url }}/assets/posts/atlasboard/4.png)
 
-
-
-After the site had been deployed and, the Kudu system in Azure makes sure the atlasboard npm package is installed. However, there is a ..... blabla. You need to modify one of the installed js files manually.
-
-This can be done through the Kudu Console that you find using the following URL
-https://[your-webapp-name].*scm*.azurewebsites.net/DebugConsole (or click tools->kudu as shown in the screenshot below.
 
 Locate the following file and edit it.
-D:\home\site\wwwroot\node_modules\atlasboard\lib\package-dependency-manager.js
+```D:\home\site\wwwroot\node_modules\atlasboard\lib\package-dependency-manager.js```
 
 Around line 92:
 
+Before:
+{% highlight javascript %}
   var npmCommand = isWindows ? "npm.cmd" : "npm";
 
   executeCommand(npmCommand, ["install", "--production", pathPackageJson], function(err, code){
+{% endhighlight %}
 
-
+After:
+{% highlight javascript %}
   var npmCommand = isWindows ? "D:\\Program Files (x86)\\npm\\3.5.1\\npm.cmd" : "npm";
 
   executeCommand(npmCommand, ["install", pathPackageJson], function(err, code){
+{% endhighlight %}
   
   
 If you access the web app url, you should now see the demo dashboard up and running!
 
+![Screenshot of a running Atlasboard]({{ site.url }}/assets/posts/atlasboard/5.png)
+
+## Thanks
+
+Thanks [@garyliu](https://twitter.com/garyliu) to for helping me get this up and running by answering
+my [stackoverflow question](http://stackoverflow.com/a/37109868/5795)
+
 
 ## Trouble shooting
+If you still run into problems, it might be useful to add the following lines to the iisnode.yml file
+in wwwroot where your webapp is installed.
 
-Add the following two lines to iisnode.yml. This will enable logging for iisnode and you´ll see log files starting to show up inside wwwroot/iisnode.
-
+{% highlight javascript %}
 loggingEnabled: true
 logDirectory: iisnode
+{% endhighlight %}
+
+
+This will enable logging for iisnode and you´ll see log files starting to show up inside wwwroot/iisnode.
+
