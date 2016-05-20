@@ -7,7 +7,7 @@ categories: atlasboard, azure, javascript
 ---
 
 
-ASP.NET Core 1 RC2 recently shipped and I'm in the process of upgrading all my RC1 projects
+[ASP.NET Core 1 RC2](https://blogs.msdn.microsoft.com/webdev/2016/05/16/announcing-asp-net-core-rc2/) recently shipped and I'm in the process of upgrading all my RC1 projects
 to RC2. The most difficult part so far has been to get project.json set up with the correct
 dependencies and frameworks. I'm using a few libraries that are not yet supporting .NET Core
 and I therefore have to run my apps on the full .NET framework.
