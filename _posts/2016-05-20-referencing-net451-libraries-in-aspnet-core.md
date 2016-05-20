@@ -162,4 +162,4 @@ able to successfully run `dotnet test`:
 }
 {% endhighlight %}
 
-A complete sample solution is available on [https://github.com/henningst/TestingNet451Projects](Github).
+A complete sample solution is available on [Github](https://github.com/henningst/TestingNet451Projects).
