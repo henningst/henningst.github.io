@@ -16,7 +16,7 @@ and I therefore have to run my apps on the full .NET framework.
 ### RC1 example
 In RC1 you typically had a project.json file like the one below. In this example I've added MongoDB.Driver 2.2.3 which
 does not run on .NET Core. To get this running, you would typically remove the dnxcore50 framework moniker from the
-stanard Visual Studio project template.
+standard Visual Studio project template.
 
 {% highlight json %}
 {
