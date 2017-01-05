@@ -3,7 +3,7 @@ layout:     post
 title:      Referencing .NET 4.5.1 libraries in ASP.NET Core
 date:       2016-05-20 21:30:00
 summary:    There are still a lot of .NET libraries that are not updated with support for .NET Core. This article shows how you can still use these libraries in an ASP.NET Core 1 RC2 project.
-categories: atlasboard, azure, javascript
+categories: aspnet-core
 ---
 
 
