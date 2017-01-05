@@ -7,8 +7,6 @@ summary:    This sample shows how to create an ASP.NET Core console application 
 
 ---
 
-# ASP.NET Core console app with Dependency Injection and Serilog
-
 This sample shows how to create an [ASP.NET Core](https://www.microsoft.com/net/core) console application with [dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) support and logging with [Serilog](https://serilog.net/).
 
 
