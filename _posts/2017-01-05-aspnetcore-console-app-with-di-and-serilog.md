@@ -38,7 +38,6 @@ You need to add a few dependencies in your `project.json`. Here is the list of d
   "Serilog.Extensions.Logging": "1.3.1",
   "Serilog.Sinks.Literate": "2.0.0"
 },
-```
 {% endhighlight %}
 
 ### Create a static instance of `IServiceProvider`
