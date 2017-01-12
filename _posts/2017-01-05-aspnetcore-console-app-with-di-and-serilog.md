@@ -1,4 +1,4 @@
 ---
 redirect_to:
-  - /posts/aspnetcore-console-app-with-di-and-serilog
+  - /posts/netcore-console-app-with-di-and-serilog
 ---
