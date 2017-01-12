@@ -1,13 +1,13 @@
 ---
 layout:     post
-title:      ASP.NET Core console app with Dependency Injection and Serilog
+title:      .NET Core console app with Dependency Injection and Serilog
 date:       2017-01-05 12:40:00
-summary:    This sample shows how to create an ASP.NET Core console application with dependency injection support and logging with Serilog.
+summary:    This sample shows how to create an .NET Core console application with dependency injection support and logging with Serilog.
 
 
 ---
 
-This sample shows how to create an [ASP.NET Core](https://www.microsoft.com/net/core) console application with [dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) support and logging with [Serilog](https://serilog.net/).
+This sample shows how to create an [.NET Core](https://www.microsoft.com/net/core) console application with [dependency injection](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) support and logging with [Serilog](https://serilog.net/).
 
 
 In an ASP.NET Core *Web Application* the DI stuff is automatically wired up for you by the `WebHostBuilder`, so the only thing you need to do is to configure the services. However, in a console application you need to handle some more of the pieces yourself. 
