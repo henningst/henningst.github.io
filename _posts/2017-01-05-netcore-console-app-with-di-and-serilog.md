@@ -3,8 +3,7 @@ layout:     post
 title:      .NET Core console app with Dependency Injection and Serilog
 date:       2017-01-05 12:40:00
 summary:    This sample shows how to create an .NET Core console application with dependency injection support and logging with Serilog.
-redirect-from:
-  - /post/aspnetcore-console-app-with-di-and-serilog/
+redirect-from:  /post/aspnetcore-console-app-with-di-and-serilog/
 
 ---
 
