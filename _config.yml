@@ -1,28 +1,69 @@
+#
+###################################
+# Site wide configuration
+####################################
+#
 title: Henning Støverud
-description: Henning Støverud's blog where I write about random tech stuff.
+email: henning@stoverud.no
+description: My personal blog where I write about random tech stuff.
+url: http://blog.stoverud.no # the base hostname & protocol for your site
 
-url: http://blog.stoverud.no
-baseurl: ""
-paginate_path: "/posts/page:num/"
-permalink: /posts/:title/
 
-markdown: kramdown
-highlighter: rouge
-gems: [jekyll-paginate, jekyll-sitemap, jekyll-redirect-from]
-paginate: 5
+#
+###################################
+# Jekyll configuration
+####################################
+#
+timezone:          Europe/Paris
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /posts/:title/
 
-navigation:
- - title: Home
-   url: /
- - title: About
-   url: /about
- - title: Contact
-   url: /contact
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
 
-social:
-   github: henningst
-   twitter: henningst
-   facebook: henning.stoverud
-   email: henning@stoverud.no
-
-google_analytics: "UA-24835523-3"
+#
+###################################
+# Site Owner configuration
+####################################
+#
+owner:
+  name: Henning Støverud
+  avatar: leonids-logo.png
+  job: "web developer"
+  bio: "full stack developer, currently working at HR Manager Talent Solutions"
+  email:
+  disqus-shortname:
+  twitter: #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics: UA-24835523-3
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: #username
+  gitlab: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  skype: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  500px: #username
+  codepen: #username
