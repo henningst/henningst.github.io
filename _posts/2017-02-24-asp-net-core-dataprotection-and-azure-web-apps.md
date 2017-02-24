@@ -153,14 +153,14 @@ When I first ran into this issue, it was difficult to find out what was actually
 looking for a solution:
 
 
-Introduction to Data Protection
+Introduction to Data Protection<br/>
 [https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/introduction](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/introduction)
 
 
-Key Storage Providerd documentation
+Key Storage Providerd documentation<br/>
 [https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-storage-providers](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-storage-providers)
 
 
-Relevant Github issues
+Relevant Github issues<br/>
 [https://github.com/aspnet/DataProtection/issues/92](https://github.com/aspnet/DataProtection/issues/92)
 [https://github.com/aspnet/Docs/issues/2334](https://github.com/aspnet/Docs/issues/2334)
