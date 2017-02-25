@@ -3,7 +3,7 @@ layout:     post
 title:      The antiforgery token could not be decrypted - Running ASP.NET Core on Azure App Service using deployment slots
 date:       2017-02-24 14:50:00
 summary:    If you are deploying ASP.NET Core webapps to Azure App Service and you are using deployment slots, you might run into the same problems I did when using the data protection features.
-categories: aspnet-core, azure
+categories: aspnet-core azure
 ---
 
 ## TL;DR

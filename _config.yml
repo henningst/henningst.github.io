@@ -34,11 +34,11 @@ kramdown:
 #
 owner:
   name: Henning Støverud
-  avatar: leonids-logo.png
+  avatar: henning.png
   job: "web developer"
   bio: "full stack developer, currently working at HR Manager Talent Solutions"
-  email:
-  disqus-shortname:
+  email: henning@stoverud.no
+  disqus-shortname: stoverudno
   twitter: #username
   facebook: #username
   google:
