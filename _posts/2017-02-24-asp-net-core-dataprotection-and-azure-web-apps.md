@@ -17,10 +17,6 @@ chances are you are using deployment slots and that your Data Protection Keys ar
 Azure Web App deployment slots, so you must either use a different key storage provider, or stop using deployment slots.
 
 
-There is no out of the box solution for deployment slots, so either implement your own
-persistence mechanism for data protection keys or stop using  deployment slots.
-
-
 ## The issue
 
 
