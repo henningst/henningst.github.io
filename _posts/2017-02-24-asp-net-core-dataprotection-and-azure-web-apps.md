@@ -42,11 +42,11 @@ but if you want to leverage deployment slots to get zero downtime deployments, y
 When not using deployment slots, everything works fine because the data protection keys stored on disk is synchronized across all the machines hosting your web app, but when using
 a deployment slot, you will end up with two separate keys. I assumed this would "just work" when running ASP.NET Core in Azure App Service, but that assumption was obviously wrong. 
 
-A couple of sentences about this issue was added to the [documentation](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/default-settings), a while back, but this is not something you will probably discover
+A couple of sentences about this issue was added to the [documentation](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/default-settings) a while back, but this is not something you will probably discover
 before you are facing the issue.
 
 > If the system is being hosted in Azure Web Sites, keys are persisted to the "%HOME%\ASP.NET\DataProtection-Keys" folder. This folder is backed by network storage and is synchronized across all machines hosting the application. Keys are not protected at rest. This folder supplies the key ring to all instances of an application in a single deployment slot. Separate deployment slots, such as Staging and Production, will not share a key ring. When you swap between deployment slots, for example swapping Staging to Production or using A/B testing, any system using data protection will not be able to decrypt stored data using the key ring inside the previous slot. This will lead to users being logged out of an ASP.NET application that uses the standard ASP.NET cookie middleware, as it uses data protection to protect its cookies. If you desire slot-independent key rings, use an external key ring provider, such as Azure Blob Storage, Azure Key Vault, a SQL store, or Redis cache.
-
+> _Source: [https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/default-settings](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/default-settings)_
 
 In addition to problems with anti forgery tokens, this problem also applies to authentication cookies, so users who are logged in when you deploy new versions and swap between staging and deployment, will also experience this issue.
 
