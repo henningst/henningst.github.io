@@ -127,7 +127,7 @@ by using alternative [key storage providers](https://docs.microsoft.com/en-us/as
 me in the [right direction](https://github.com/aspnet/DataProtection/issues/92#issuecomment-282365822).
 
 
-Since I already has a Redis instance up and running, I chose to use the Redis provider. There are just a couple of simple steps you need to do in order to
+Since I already had a Redis instance up and running, I chose to use the Redis provider. There are just a couple of simple steps you need to do in order to
 get the Redis Key Storage Provider up and running. 
 
 - First add the following NuGet package to your project: `"Microsoft.AspNetCore.DataProtection.Redis"`
