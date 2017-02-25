@@ -163,5 +163,5 @@ Key Storage Providerd documentation<br/>
 
 
 Relevant Github issues<br/>
-[https://github.com/aspnet/DataProtection/issues/92](https://github.com/aspnet/DataProtection/issues/92)
+[https://github.com/aspnet/DataProtection/issues/92](https://github.com/aspnet/DataProtection/issues/92)<br />
 [https://github.com/aspnet/Docs/issues/2334](https://github.com/aspnet/Docs/issues/2334)
