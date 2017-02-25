@@ -10,7 +10,8 @@ categories: aspnet-core azure
 
 If you are seeing this exception in you ASP.NET Core web app running in Azure App Service:
 ```
-System.InvalidOperationException: The antiforgery token could not be decrypted. ---> System.Security.Cryptography.CryptographicException: The key {9725081b-7caf-4642-ae55-93cf9c871c36} was not found in the key ring.
+System.InvalidOperationException: The antiforgery token could not be decrypted. ---> 
+System.Security.Cryptography.CryptographicException: The key {9725081b-7caf-4642-ae55-93cf9c871c36} was not found in the key ring.
 ```
 chances are you are using deployment slots and that your Data Protection Keys are not matching. The default Data Protection configuration does not work when using
 Azure Web App deployment slots, so you must either use a different key storage provider, or stop using deployment slots.
