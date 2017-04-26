@@ -13,10 +13,9 @@ I've been moving the build process for a few .NET Core projects from Team City t
 I'm using [Cake](http://cakebuild.net/) to script the build process. This allows me to define all the build steps in a build file I can keep in the git repo together with the rest of the project. It also keeps the number of build tasks I need to define in VSTS at a minimum. It's easy to trigger Cake scripts from VSTS by using the [Cake tool](https://marketplace.visualstudio.com/items?itemName=cake-build.cake) available in the VSTS Marketplace.
 
 
-The first step is to make sure the test runner is writing the test results to an output file. 
-In the the Cake script, this is done by passing in a `DotNetCoreTestSettings` object and specifying some additional arguments using `ArgumentCustomization`.
+VSTS does not automatically pick up results from tests run via Cake, so the first we need to do is to make sure the test runner is writing test results to an output file.
 
-The complete test task looks like this:
+In the Cake script, this is done by passing in a `DotNetCoreTestSettings` object and specifying some additional arguments using `ArgumentCustomization` like this:
 
 ```
 Task("Test")
@@ -38,12 +37,11 @@ When running the `Test` task using Cake, I'm now getting a `TestResults.xml` fil
 
 ## VSTS Build definition
 
-In VSTS my build process consists of mainly 2 tasks. The first task is executing the Cake script and makes sure all the projects compile and all the tests are run. After adding the extra argument as shown above, the main build step is also making sure the test results are written to `TestResults.xml`.
-
+In VSTS my build process consists of mainly 2 tasks. The first task is executing the Cake script and makes sure all the projects compile and all the tests are run. After adding the extra argument as shown above, the main build step is also making sure the test results are written to `TestResults.xml` which we can then pick up in a subsequent step.
 
 ![Cake build settings]({{ site.url }}/assets/img/posts/vsts-testresults/01.png)
 
-You need to add another task in order for VSTS to pick up the test result file. This task is called `Publish Test Results`. This task is configured to look for all files matching the pattern `**/TestResults*.xml`. 
+In order to actually show the test report, we need to add another task to the build definition in VSTS. This task is called `Publish Test Results`. This task is configured to look for all files matching the pattern `**/TestResults*.xml`. 
 
 One important detail here is that you have to choose the `VSTest` test result format even if your tests are actually xUnit tests. 
 
