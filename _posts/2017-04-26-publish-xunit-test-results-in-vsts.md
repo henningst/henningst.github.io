@@ -8,12 +8,10 @@ categories: aspnet-core azure
 
 I've been moving the build process for a few .NET Core projects from Team City to Visual Studio Team Services (VSTS) the last couple of days. I'm using xUnit for testing and have had some issues with getting the test results to show up in VSTS. This blog post shows how to get it up and running.
 
-## Cake
+## Build script
 
 I'm using [Cake](http://cakebuild.net/) to script the build process. This allows me to define all the build steps in a build file I can keep in the git repo together with the rest of the project. It also keeps the number of build tasks I need to define in VSTS at a minimum. It's easy to trigger Cake scripts from VSTS by using the [Cake tool](https://marketplace.visualstudio.com/items?itemName=cake-build.cake) available in the VSTS Marketplace.
 
-
-## The Cake script
 
 The first step is to make sure the test runner is writing the test results to an output file. 
 In the the Cake script, this is done by passing in a `DotNetCoreTestSettings` object and specifying some additional arguments using `ArgumentCustomization`.
