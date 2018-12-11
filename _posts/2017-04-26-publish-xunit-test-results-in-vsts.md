@@ -43,7 +43,11 @@ In VSTS my build process consists of mainly 2 tasks. The first task is executing
 
 In order to actually show the test report, we need to add another task to the build definition in VSTS. This task is called `Publish Test Results`. This task is configured to look for all files matching the pattern `**/TestResults*.xml`. 
 
-One important detail here is that you have to choose the `VSTest` test result format even if your tests are actually xUnit tests. 
+One important detail here is that you have to choose the `VSTest` test result format even if your tests are actually xUnit tests.
+
+Also remember to choose "Run this task - Even if a previous task has failed, unless the build was canceled" under `Control Options` to 
+make sure the test results are published even if there are failing tests or any of the preceeding steps are failing (Thanks
+to [@josteinkl](https://twitter.com/josteikl) for pointing this out!).
 
 ![Copy test results]({{ site.url }}/assets/img/posts/vsts-testresults/02.png)
 
